@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>USER REGISTRATION</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<div class="page">
+
+		<p><input type="radio" name="input_data" class="get_data" value="register" onclick="func()">Register
+		</p>
+		<p> <input type="radio" name="input_data" class="get_data" value="login" onclick="func()" checked>Login&nbsp;&nbsp; </p>
+		<!-- <p><a onclick="myFunction_register()">Register</a> <a onclick="myFunction_login()">Login &nbsp;/&nbsp; </a></p> -->
+	</div>
+	<div id="register" name="value">
+		<h1 id="heading">register</h1>
+		<span id="missing_error"></span>
+		<div class="content">
+			<form name="myForm" onsubmit="return validateForm()">
+			<label class="lab" for="">EMAIL</label>
+			<input class="inp" id="email" type="email" name="email"><br><br>
+			<label class="lab" for="">USERNAME</label>
+			<input class="inp" id="uname" type="text" name="uname"><br><br>
+			<label class="lab" for="">PASSWORD</label>
+			<input class="inp" id="pwd" type="password" name="pwd"><br><br>
+			<label class="lab" for="">FIRST-NAME</label>
+			<input class="inp" id="fname" type="text" name="firstname"><br><br>
+			<label class="lab" for="">LAST-NAME</label>
+			<input class="inp" id="lname" type="text" name="lastname"><br><br>
+			<label class="lab" for="">GENDER</label>
+			<input class="inp" id="gen" type="text" name="gender"><br><br>
+			<label class="lab" for="">ROLE</label>
+			<input type="radio" id="admin" class="btn" name="role" value="admin">
+			<label for="">admin</label>
+			<input type="radio" id="oper" class="btn" name="role" value="operations">
+			<label for="">operations</label>
+			<input type="radio" id="sales" class="btn" name="role" value="sales">
+			<label for="">sales</label>
+
+			<br><br><br>
+			<input type="submit" value="submit" id="button" onclick="getData()">
+			</form>
+		</div>
+	</div>
+	<!-- ==================================login page =====================================-->
+
+
+	<div id="login" name="value" value="login">
+		<h1 id="heading">login</h1>
+		<span id="error"></span>
+		<br>
+		<div class="content">
+			<label class="lab" for="">EMAIL</label>
+			<input class="inp" id="email_chk" type="text" name="email" onclick="readonly_val()"><br><br>
+			<label class="lab" for="">PASSWORD</label>
+			<input class="inp" id="pwd_chk" type="password" onclick="readonly_val()" name="pwd"><br><br>
+			<br><br>
+			<input type="submit" value="submit" id="button" onclick="checkData()">
+		</div>
+	</div>
+
+
+	<!-- ==================================user page =====================================-->
+
+	<div id="user1" class="user">
+		<p id="user_role"></p>
+		<button id="logout" onclick="logout()"> logout</button>
+
+		<ul id="box" style="list-style-type:none;"></ul>
+
+
+
+	</div>
+
+
+</body>
+
+
+<script src="index.js"></script>
+
+</html>
