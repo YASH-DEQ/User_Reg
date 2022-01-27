@@ -1,3 +1,14 @@
+/*
+BASIC FUNCTIONS WORKING: 
+
+func() => for toggling between login and register form page 
+getData() => get the data from the register page and save it to local storage
+checkData() => check for login credentials 
+validateForm() => basic validations
+readonly_val() => when logged in, the login field should be non-editable
+logout() => basic logout. 
+*/
+
 function func() {
     var reg = document.getElementById('register');
     var log = document.getElementById('login');
@@ -20,7 +31,11 @@ function getData() {
     let fname = document.getElementById('fname').value;
     let lname = document.getElementById('lname').value;
     let gen = document.getElementById('gen').value;
+
+
     let roles = document.querySelector('input[type=radio][name=role]:checked').value;
+
+
     let role;
     if (roles == 'admin') {
         role = document.getElementById('admin').value;
@@ -90,8 +105,9 @@ function checkData() {
             arr = user_record.filter((v) => { return v.role == curr_role });
             for (var i = 0; i < arr.length; i++) {
 
-                document.getElementById('user_role').innerHTML = "Showing users with role: " + curr_role;
+                document.getElementById('user_role').innerHTML = "Showing users with role: " + curr_role;   // role specification
 
+                // append all the name of the user in list tag
 
                 let box = document.getElementById('box');
                 let li = document.createElement('li');
